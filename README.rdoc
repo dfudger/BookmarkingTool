@@ -1,28 +1,93 @@
-== README
+= README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a coding challenge provided by AlphaSights. The goal is to create a bookmarking app using Ruby on Rails.
 
-Things you may want to cover:
+== Requirements
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Enter a URL and tags and the bookmark is created
+* The bookmark should be modeled as belonging to a site. 		
+* The URL needs to be parsed to extract the domain
+  * If a site corresponding to that domain doesn't exist in the database then it must be created.
+* When a bookmark is created: 
+  * It is attached to a corresponding site
+  * It has tags 
+  * It could also have shortening e.g using tinyurl, also if it pulled in the URL to get the page title
+  * Further meta data that would be cool!
+* In the interface, bookmarks visually grouped by a site
+  * Viewing an actual bookmark should display:
+  * URL
+  * Tags
+  * Also title, shortening if applicable
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+==== Advanced Portion
+
+OPTION ONE
+
+* Be able to search bookmarks and sites based on any of my data that I have stored 
+  * No 3rd party free text search stuff here please
+* Extract this search into some kind of generic search module 
+  * No plugins or free text search engines here please
+  * Basically I want to be able to search all the fields (SQL LIKE) of any model. This will give me instant search functionality with a nice clean API to any model I choose to mix it into. 
+  * Note: This is a contrived example and in real life you are likely to use a free text search gem but I am looking for some understanding of meta programming, API design, and a bit more advanced Ruby than that required for the previous points.
+
+
+OPTION TWO
+
+* Filter bookmarks visible on the page based on any data that I have stored 
+  * i.e. I type in some characters in the filter field and bookmarks with no matches are instantly hidden. 
+  * Please do not use any existing JS plugins here.
+* Extract client-side filter into some kind of a generic filter module. 
+  * Be able to reuse this JavaScript/CoffeeScript module in a different application
+  * A nice and clean API to integrate and configure it would be nice. 
+  * If needed, you may define requirements for applications that are going to use your module, e.g. an application has to provide HTML data-filterable attributes for filtering and class attributes denoting filterable units.
+
+
+== Models
+
+*Bookmark*: url, title, description, site_id
+
+
+*Site*: title, url, description, bookmarks (1 - *)
+
+
+*Tags*: title
+
+
+*Bookmark_Tags*: bookmark id, tags id
+
+
+Each model has a controller. Using, CRUD, I can attach views to the controller to get info and display info
+
+
+== General Steps:
+
+0. Complete a Rails tutorial
+1. Work out the models
+2. Generate each model (then do a db migrate)
+3. Add models to routes file (resources)
+4. Add a controller method and view for each action ( like list posts )
+5. Create forms for each view (try to use partials)
+6. Parse the url to get domain
+7. Shorten the url
+
+See use cases for details actions. 
+
+
+
+
+== Use Cases
+
+* Go to homepage
+* View a list of sites and bookmarks
+* Create a bookmark
+* View a bookmark
+* Edit a bookmark
+* Delete a bookmark
+* Create a bookmark with an existing site
+* Create a bookmark with tags
+* Create a bookmark with no tags
+* View a site
+
+
+
