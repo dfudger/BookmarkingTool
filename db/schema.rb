@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406211437) do
+ActiveRecord::Schema.define(version: 20140406234412) do
+
+  create_table "bookmark_tags", force: true do |t|
+    t.string   "bookmarkID"
+    t.string   "tagID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bookmarks", force: true do |t|
     t.string   "url"
@@ -24,6 +31,12 @@ ActiveRecord::Schema.define(version: 20140406211437) do
 
   create_table "sites", force: true do |t|
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
