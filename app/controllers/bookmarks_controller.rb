@@ -4,6 +4,9 @@ class BookmarksController < ApplicationController
 	end
 
 	def create
+		
+		
+
 		@bookmark = Bookmark.new(bookmark_params)
 		@bookmark.save
 		redirect_to @bookmark
