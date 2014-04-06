@@ -4,8 +4,18 @@ class BookmarksController < ApplicationController
 	end
 
 	def create
+
+		temp = params[:bookmark][:siteID]
 		
-		
+		#Check if the site is already in the db
+		if(!(Site.find_by url: params[:bookmark][:siteID]))
+			@site = Site.new(url: params[:bookmark][:siteID])
+			@site.save
+			flash[:notice] = @site.inspect
+		end
+		#Save the id to the bookmark siteID param
+		currSiteID = Site.find_by url: params[:bookmark][:siteID]
+		params[:bookmark][:siteID] = currSiteID
 
 		@bookmark = Bookmark.new(bookmark_params)
 		@bookmark.save
