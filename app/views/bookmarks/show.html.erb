@@ -21,3 +21,12 @@
   <strong>Site:</strong>
   <%= @bookmark.siteID %>
 </p>
+
+<p>
+  <strong>Tags:</strong>
+ 
+  <% @bookmark.tags.each do |i| %>
+  		
+  		<%= i.title %>
+  <% end %>
+</p>

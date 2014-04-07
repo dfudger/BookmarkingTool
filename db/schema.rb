@@ -13,18 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20140406234412) do
 
-  create_table "bookmark_tags", force: true do |t|
-    t.string   "bookmarkID"
-    t.string   "tagID"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "bookmarks", force: true do |t|
     t.string   "url"
     t.string   "title"
     t.text     "description"
     t.string   "siteID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bookmarks_tags", force: true do |t|
+    t.integer  "bookmark_id"
+    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
