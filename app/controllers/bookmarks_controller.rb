@@ -19,11 +19,36 @@ class BookmarksController < ApplicationController
 		@bookmark = Bookmark.new(bookmark_params)
 		@bookmark.save
 		
+		#Parse Tags
+		tagsArray = (params[:bookmark][:tagList]).split(',')
+
+		#Add each tag to the table
+		tagsArray.each do |c|
+			idForTag = getTagID(c)
+			
+			@bookTag = BookmarkTag.new(bookmarkID: @bookmark.id, tagID:idForTag)
+			@bookTag.save
+
+		end
+		flash[:notice] = @bookTag.inspect
 		redirect_to @bookmark
 	end
 
 	def show
 		@bookmark = Bookmark.find(params[:id])
+	end
+
+	private
+	def getTagID(tag)
+
+		#Check if tag already in db
+		if(!(Tag.find_by title: tag))
+			@currTag = Tag.new(title: tag)
+			@currTag.save
+		end
+
+		#Get the id of the tag in the db
+		return (Tag.find_by title: tag).id
 	end
 
 	private

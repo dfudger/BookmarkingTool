@@ -20,10 +20,15 @@
   </p>
 
   <p>
+    <%= f.label :tags %>
+    <p>(Please separate tags by commas)</p>
+    <%= f.text_area :tagList %>
+  </p>
+
+  <p>
     <%= f.label :site %><br>
     <%= f.text_field :siteID %>
   </p>
- 
  
   <p>
     <%= f.submit %>
