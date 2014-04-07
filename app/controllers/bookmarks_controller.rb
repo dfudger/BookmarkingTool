@@ -3,6 +3,10 @@ class BookmarksController < ApplicationController
 	def new
 	end
 
+	def index
+		@bookmarks = Bookmark.all
+	end
+
 	def create
 
 		#Check if the site is already in the db
