@@ -1,6 +1,7 @@
 class CreateBookmarks < ActiveRecord::Migration
   def change
     create_table :bookmarks do |t|
+      t.belongs_to :site
       t.string :url
       t.string :title
       t.text :description

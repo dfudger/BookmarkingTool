@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20140406234412) do
 
   create_table "bookmarks", force: true do |t|
+    t.integer  "site_id"
     t.string   "url"
     t.string   "title"
     t.text     "description"
