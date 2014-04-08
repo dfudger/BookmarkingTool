@@ -36,7 +36,7 @@ class BookmarksController < ApplicationController
 		@site.bookmarks << @bookmark
 
 		#Parse Tags
-		tagsArray = (params[:bookmark][:tagList]).split(',')
+		tagsArray = (params[:bookmark][:tagList]).split(' ')
 
 		#Add each tag to the table
 		tagsArray.each do |c|

@@ -57,23 +57,24 @@ OPTION TWO
 *Bookmark_Tags*: bookmark id, tags id
 
 
-Each model has a controller. Using, CRUD, I can attach views to the controller to get info and display info
+Each model has a controller. Using, CRUD, I can attach views to the controller to get info and display info.
+
+UPDATE: This ended up changing, for the many-to-many and one-to-many, reconrd associations were used.
 
 
 == General Steps:
 
-0. Complete a Rails tutorial
-1. Work out the models
-2. Generate each model (then do a db migrate)
-3. Add models to routes file (resources)
-4. Add a controller method and view for each action ( like list posts )
-5. Create forms for each view (try to use partials)
-6. Parse the url to get domain
-7. Shorten the url
+0. ~~Complete a Rails tutorial~~
+1. ~~Work out the models~~
+2. ~~Generate each model (then do a db migrate)~~
+3. ~~Add models to routes file (resources)~~
+4. ~~Add a controller method and view for each action ( like list posts )~~
+5. ~~Create forms for each view (try to use partials)~~
+6. Work on making the views more usable
+7. Parse the url to get domain
+8. Shorten the url
 
 See use cases for details actions. 
-
-
 
 
 == Use Cases
@@ -90,4 +91,26 @@ See use cases for details actions.
 * View a site
 
 
+== To Do:
 
+* Clean up site info on bookmark/show
+* Make urls clickable
+* Fix back to go to home page
+* Add form validation
+* Change tags to be space separated
+* Create a usable gui
+
+
+== Future Features
+
+* Delete bookmarks
+* Edit a bookmark
+* Would be nice to have quick creation and view the top sites on the homepage
+* URL to be parsed to extract domain, due to time, the user enters the domain manually.
+* Shortening the url, using tinyurl
+* Pull the page title from the url
+
+
+== Bugs
+
+No known bugs.
