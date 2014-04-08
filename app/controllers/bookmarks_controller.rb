@@ -30,7 +30,7 @@ class BookmarksController < ApplicationController
 		#Add the bookmark and parameters to the database
 		@bookmark = Bookmark.new(bookmark_params)
 		@bookmark.save
-		
+
 		#Save relationship between site and this bookmark
 		@site = Site.find_by url: siteDomain
 		@site.bookmarks << @bookmark
@@ -50,6 +50,7 @@ class BookmarksController < ApplicationController
 		end
 	
 		redirect_to @bookmark
+	
 	end
 
 	def show

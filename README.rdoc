@@ -1,8 +1,37 @@
 = README
 
-This project is a coding challenge provided by AlphaSights. The goal is to create a bookmarking app using Ruby on Rails.
+This project is a coding challenge provided by AlphaSights. 
+This app allows a user to save their bookmarks to a SQLite database, these bookmarks are then viewed based on their domain.
 
 The bootflat framework is used, the source code for the bootflat-rails gem can be found here: https://github.com/zakelfassi/Bootflat-Rails
+
+== Setup
+
+To install and run this project:
+1. git clone https://github.com/dfudger/BookmarkingTool.git
+2. cd BookmarkingTool/
+3. bundle install
+4. rake db:migrate
+5. rails server
+
+== Future Features
+
+* URL to be parsed to extract domain, due to time, the user enters the domain manually.
+* Delete a bookmark
+* Edit a bookmark
+* Would be nice to have quick creation and view the top sites on the homepage
+* Shortening the url, using tinyurl
+* Parse the page title from the url
+* Filter the bookmarks based on some data
+  * Note: This could be done using and sql query where the user enters the text, and chooses if they would like to filter the title, domain, tags, etc.
+* Create a generic filter module - Will need to learn how to do this.
+
+== Bugs
+
+No known bugs.
+
+
+= Documentation
 
 == Requirements
 
@@ -17,9 +46,9 @@ The bootflat framework is used, the source code for the bootflat-rails gem can b
   * Further meta data that would be cool!
 * In the interface, bookmarks visually grouped by a site
   * Viewing an actual bookmark should display:
-  * URL
-  * Tags
-  * Also title, shortening if applicable
+    * URL
+    * Tags
+    * Also title, shortening if applicable
 
 
 ==== Advanced Portion
@@ -92,22 +121,3 @@ See use cases for details actions.
 * Create a bookmark with no tags
 * View a site
 
-
-== To Do:
-
-* Add form validation
-
-
-== Future Features
-
-* Delete bookmarks
-* Edit a bookmark
-* Would be nice to have quick creation and view the top sites on the homepage
-* URL to be parsed to extract domain, due to time, the user enters the domain manually.
-* Shortening the url, using tinyurl
-* Pull the page title from the url
-
-
-== Bugs
-
-No known bugs.
