@@ -2,6 +2,8 @@
 
 This project is a coding challenge provided by AlphaSights. The goal is to create a bookmarking app using Ruby on Rails.
 
+The bootflat framework is used, the source code for the bootflat-rails gem can be found [here](https://github.com/zakelfassi/Bootflat-Rails) 
+
 == Requirements
 
 * Enter a URL and tags and the bookmark is created
@@ -64,12 +66,12 @@ UPDATE: This ended up changing, for the many-to-many and one-to-many, reconrd as
 
 == General Steps:
 
-0. ~~Complete a Rails tutorial~~
-1. ~~Work out the models~~
-2. ~~Generate each model (then do a db migrate)~~
-3. ~~Add models to routes file (resources)~~
-4. ~~Add a controller method and view for each action ( like list posts )~~
-5. ~~Create forms for each view (try to use partials)~~
+0. Complete a Rails tutorial
+1. Work out the models
+2. Generate each model (then do a db migrate)
+3. Add models to routes file (resources)
+4. Add a controller method and view for each action ( like list posts )
+5. Create forms for each view (try to use partials)
 6. Work on making the views more usable
 7. Parse the url to get domain
 8. Shorten the url
