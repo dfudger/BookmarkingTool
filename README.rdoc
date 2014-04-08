@@ -99,7 +99,6 @@ See use cases for details actions.
 * Make urls clickable
 * Fix back to go to home page
 * Add form validation
-* Change tags to be space separated
 * Create a usable gui
 
 
