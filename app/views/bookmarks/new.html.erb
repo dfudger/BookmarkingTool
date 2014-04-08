@@ -38,9 +38,7 @@
     <%= f.text_field :siteID %>
   </p>
  
-  <p>
-    <%= f.submit %>
-  </p>
+  <%= f.submit 'Save Bookmark', :class => 'btn btn-primary' %>
 <% end %>
 <br>
 <%= link_to 'Home', {controller: "welcome"}, :class => 'btn btn-primary' %>
