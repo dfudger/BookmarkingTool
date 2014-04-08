@@ -95,11 +95,7 @@ See use cases for details actions.
 
 == To Do:
 
-* Clean up site info on bookmark/show
-* Make urls clickable
-* Fix back to go to home page
 * Add form validation
-* Create a usable gui
 
 
 == Future Features
