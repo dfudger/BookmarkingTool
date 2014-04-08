@@ -2,7 +2,7 @@
 
 This project is a coding challenge provided by AlphaSights. The goal is to create a bookmarking app using Ruby on Rails.
 
-The bootflat framework is used, the source code for the bootflat-rails gem can be found [here](https://github.com/zakelfassi/Bootflat-Rails) 
+The bootflat framework is used, the source code for the bootflat-rails gem can be found here: https://github.com/zakelfassi/Bootflat-Rails
 
 == Requirements
 
