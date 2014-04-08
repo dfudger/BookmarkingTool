@@ -2,7 +2,6 @@
 
 This project is a coding challenge provided by AlphaSights. 
 This app allows a user to save their bookmarks to a SQLite database, these bookmarks are then viewed based on their domain.
-The current version of the tool, includes the basic functionality to complete the primary use cases. Please see future features for more information on upcoming additions.
 
 The bootflat framework is used, the source code for the bootflat-rails gem can be found here: https://github.com/zakelfassi/Bootflat-Rails
 
@@ -16,8 +15,6 @@ To install and run this project:
 5. rails server
 
 == Future Features
-
-These are the features that will be added in upcoming iterations of the project. 
 
 * URL to be parsed to extract domain, due to time, the user enters the domain manually.
 * Add validation for the form, before added to the databases
