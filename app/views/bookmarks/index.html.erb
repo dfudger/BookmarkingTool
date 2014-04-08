@@ -1,12 +1,22 @@
+<!-- 
+   - Bookmarks/index.html.erb 
+   - Author: Danielle Fudger
+   - Created: April, 2014
+   - 
+   - This view allows the user to view all of the bookmarks within the database
+   -->
+
 <h1>All Bookmarks</h1>
  
 <table>
+  <!-- Headings -->
   <tr>
     <th>Title</th>
     <th>URL</th>
     <th></th>
   </tr>
  
+  <!-- Data -->
   <% @bookmarks.each do |bookmark| %>
     <tr>
       <td><%= bookmark.title %></td>

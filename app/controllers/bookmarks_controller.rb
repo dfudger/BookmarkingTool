@@ -1,3 +1,10 @@
+#  bookmarks_controller.rb 
+#  Author: Danielle Fudger
+#  Created: April, 2014
+#
+#  This controller creates the bookmarks and its relations to site and tags
+#  it also includes the CRUD methods for the user to interact with the views.
+  
 class BookmarksController < ApplicationController
 
 	def new
@@ -28,27 +35,18 @@ class BookmarksController < ApplicationController
 		@site = Site.find_by url: siteDomain
 		@site.bookmarks << @bookmark
 
-		
 		#Parse Tags
 		tagsArray = (params[:bookmark][:tagList]).split(',')
-
-		
 
 		#Add each tag to the table
 		tagsArray.each do |c|
 			#Check if tag already in db
 			if(!(Tag.find_by title: c))
 				@currTag = Tag.new(title: c)
-				@currTag.save
-				
+				@currTag.save				
 			end
 
 			@bookmark.tags << (Tag.find_by title: c)
-			
-			#idForTag = (Tag.find_by title: c).id
-			#@bookTag = BookmarkTag.new(bookmarkID: @bookmark.id, tagID:idForTag)
-			#@bookTag.save
-
 		end
 	
 		redirect_to @bookmark
@@ -56,22 +54,8 @@ class BookmarksController < ApplicationController
 
 	def show
 		@bookmark = Bookmark.find(params[:id])
-		#@bookTag = BookmarkTag.where("bookmarkID = ?", params[:id])
 	end
 
-	private
-	def getTagID(tag)
-
-		#Check if tag already in db
-		if(!(Tag.find_by title: tag))
-			@currTag = Tag.new(title: tag)
-			@currTag.save
-			@tag.bookmark << currTag
-		end
-
-		#Get the id of the tag in the db
-		return (Tag.find_by title: tag).id
-	end
 
 	private
  	def bookmark_params

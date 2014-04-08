@@ -1,4 +1,13 @@
-<h1>All Sites</h1>
+<!-- 
+   - Sites/index.html.erb 
+   - Author: Danielle Fudger
+   - Created: April, 2014
+   - Lists all of the sites, and their corresponding bookmarks.
+   -->
+
+<h1>Sites</h1>
+
+<!-- Loop through each site in the db and display the bookmarks for each -->
 <% @sites.each do |site| %>
 	<%= site.url %><br>
 	<% site.bookmarks.each do |i| %>
