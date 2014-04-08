@@ -6,17 +6,10 @@
    - This is the homepage for the app. From here they can choose if they want to view or add a bookmark.
    -->
 
-<html>
-	<head>
-	</head>
+<h1>Bookmarking App</h1>
+<h5>An AlphaSights Challenge</h5>
+<br>
 
-	<body>
-		<h1>Bookmarking App</h1>
-		<br>
-		<%= link_to "Create a bookmark", new_bookmark_path %>
-		<br><br>
-		<%= link_to "View all bookmarks", controller: "bookmarks" %>
-		<br><br>
-	</body>
-</html>
+<%= link_to "Create a bookmark", new_bookmark_path, :class => 'btn btn-primary' %>
+<%= link_to "View Sites", {controller: "sites"}, :class => 'btn btn-primary' %>
 
