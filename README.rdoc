@@ -17,6 +17,7 @@ To install and run this project:
 == Future Features
 
 * URL to be parsed to extract domain, due to time, the user enters the domain manually.
+* Add validation for the form, before added to the databases
 * Delete a bookmark
 * Edit a bookmark
 * Would be nice to have quick creation and view the top sites on the homepage
