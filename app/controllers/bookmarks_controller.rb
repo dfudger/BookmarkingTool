@@ -8,20 +8,26 @@ class BookmarksController < ApplicationController
 	end
 
 	def create
-
-		#Check if the site is already in the db
-		if(!(Site.find_by url: params[:bookmark][:siteID]))
-			@site = Site.new(url: params[:bookmark][:siteID])
+		siteDomain = params[:bookmark][:siteID]
+		
+		#Check if the site is already in the db, if not add it
+		if(!(Site.find_by url: siteDomain))
+			@site = Site.new(url: siteDomain)
 			@site.save
 		end
 		
 		#Save the id to the bookmark siteID param
-		currSiteID = (Site.find_by url: params[:bookmark][:siteID]).id
+		currSiteID = (Site.find_by url: siteDomain).id
 		params[:bookmark][:siteID] = currSiteID
 
 		#Add the bookmark and parameters to the database
 		@bookmark = Bookmark.new(bookmark_params)
 		@bookmark.save
+		
+		#Save relationship between site and this bookmark
+		@site = Site.find_by url: siteDomain
+		@site.bookmarks << @bookmark
+
 		
 		#Parse Tags
 		tagsArray = (params[:bookmark][:tagList]).split(',')

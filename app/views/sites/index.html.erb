@@ -1,0 +1,9 @@
+<h1>All Sites</h1>
+<% @sites.each do |site| %>
+	<%= site.url %><br>
+	<% site.bookmarks.each do |i| %>
+  		<%= i.title %>
+  	<% end %>
+	<br>
+
+<% end %>
